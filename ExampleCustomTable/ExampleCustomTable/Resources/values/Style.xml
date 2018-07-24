@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+    <!-- Application theme -->
+    <style name="AppTheme.Base" parent="@style/Theme.AppCompat.Light">
+    </style>
+</resources>
