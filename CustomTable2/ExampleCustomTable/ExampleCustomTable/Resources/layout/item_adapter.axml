@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp">
+    <FrameLayout
+        android:id="@+id/frameLayout1"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_width="69dp"
+        android:layout_height="69dp" />
+    <View
+        android:id="@+id/view1"
+        android:layout_below="@id/frameLayout1"
+        android:layout_alignParentLeft="true"
+        android:layout_width="70dp"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray" />
+<!--Not working well-->
+    <View
+        android:id="@+id/view2"
+        android:layout_toRightOf="@id/frameLayout1"
+        android:layout_alignParentTop="true"
+        android:layout_width="1dp"
+        android:layout_height="70dp"
+        android:background="@android:color/darker_gray" />
+</RelativeLayout>

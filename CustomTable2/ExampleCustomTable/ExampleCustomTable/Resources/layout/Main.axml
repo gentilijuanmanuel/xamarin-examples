@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:splitMotionEvents="false">
+    <FrameLayout
+        android:id="@+id/tl_left_top"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="#ff0000">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:text="Hola!"
+            android:padding="3dip" />
+    </FrameLayout>
+    <exampleCustomTable.MyRecyclerView
+        android:id="@+id/rv_left_down"
+        android:layout_below="@id/tl_left_top"
+        android:layout_alignParentLeft="true"
+        android:layout_width="70dp"
+        android:layout_height="match_parent"
+        android:background="#00ba0f"
+        android:scrollbars="vertical" />
+    <exampleCustomTable.MyRecyclerView
+        android:id="@+id/rv_right_top"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@id/tl_left_top"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="#00ba0f"
+        android:scrollbars="horizontal" />
+    <FrameLayout
+        android:layout_toRightOf="@id/rv_left_down"
+        android:layout_below="@id/rv_right_top"
+        android:layout_width="700dp"
+        android:layout_height="match_parent"
+        android:splitMotionEvents="false">
+        <exampleCustomTable.MyRecyclerView
+            android:id="@+id/rv_right_down"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical" />
+    </FrameLayout>
+<!--<HorizontalScrollView
+        android:id="@+id/hv_right_down"
+        android:layout_width="700dp"
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@id/rv_left_down"
+        android:layout_below="@id/rv_right_top">
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="700dp"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:splitMotionEvents="false">
+                <exampleCustomTable.MyRecyclerView
+                    android:id="@+id/rv_right_down"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+        </FrameLayout>
+    </HorizontalScrollView>-->
+</RelativeLayout>
