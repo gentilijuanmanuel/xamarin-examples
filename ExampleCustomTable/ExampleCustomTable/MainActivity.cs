@@ -9,10 +9,8 @@ namespace ExampleCustomTable
     [Activity(Label = "ExampleCustomTable", MainLauncher = true, Theme = "@style/AppTheme.Base")]
     public class MainActivity : AppCompatActivity
     {
-        public static MyHorizontalScrollView horizontalScrollViewRightBottom, horizontalScrollViewRightTop;
-        public static AligningRecyclerView rvLeftDown, rvRightDown;
-
-        public static bool leftMustScrollBecauseOfRv, rvMustScrollBecauseOfLeft, topMustScrollBecauseOfRv, rvMustScrollBecauseOfTop;
+        private MyHorizontalScrollView horizontalScrollViewRightBottom, horizontalScrollViewRightTop;
+        private AligningRecyclerView rvLeftDown, rvRightDown;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -20,21 +18,24 @@ namespace ExampleCustomTable
 
             SetContentView(Resource.Layout.Main);
 
-            horizontalScrollViewRightBottom = this.FindViewById<MyHorizontalScrollView>(Resource.Id.hv_right_down);
-            horizontalScrollViewRightTop = this.FindViewById<MyHorizontalScrollView>(Resource.Id.hv_right_top);
-
-            rvRightDown = this.FindViewById<AligningRecyclerView>(Resource.Id.rv_right_down);
-            rvRightDown.SetAdapter(new RvRightDownAdapter(this));
+            this.rvRightDown = this.FindViewById<AligningRecyclerView>(Resource.Id.rv_right_down);
+            this.rvRightDown.SetAdapter(new RvRightDownAdapter(this));
             var layoutManagerRightDown = new GridLayoutManager(this, 6);
-            rvRightDown.SetLayoutManager(layoutManagerRightDown);
+            this.rvRightDown.SetLayoutManager(layoutManagerRightDown);
 
-            rvLeftDown = this.FindViewById<AligningRecyclerView>(Resource.Id.rv_left_down);
-            rvLeftDown.SetAdapter(new RvLeftDownAdapter(this));
+            this.rvLeftDown = this.FindViewById<AligningRecyclerView>(Resource.Id.rv_left_down);
+            this.rvLeftDown.SetAdapter(new RvLeftDownAdapter(this));
             var layoutManagerLeftDown = new GridLayoutManager(this, 1);
-            rvLeftDown.SetLayoutManager(layoutManagerLeftDown);
+            this.rvLeftDown.SetLayoutManager(layoutManagerLeftDown);
 
-            rvLeftDown.bindTo(rvRightDown);
-            rvRightDown.bindTo(rvLeftDown);
+            this.rvLeftDown.bindTo(rvRightDown);
+            this.rvRightDown.bindTo(rvLeftDown);
+
+            this.horizontalScrollViewRightTop = this.FindViewById<MyHorizontalScrollView>(Resource.Id.hv_right_top);
+            this.horizontalScrollViewRightBottom = this.FindViewById<MyHorizontalScrollView>(Resource.Id.hv_right_down);
+
+            this.horizontalScrollViewRightTop.Configure(this.horizontalScrollViewRightBottom, this.rvRightDown);
+            this.horizontalScrollViewRightBottom.Configure(this.horizontalScrollViewRightTop, this.rvRightDown);
         }
     }
 
