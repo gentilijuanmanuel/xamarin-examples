@@ -93,6 +93,14 @@
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ItemsAdapter.cs" />
+    <Compile Include="RvLeftDownAdapter.cs" />
+    <Compile Include="RvRightDownAdapter.cs" />
+    <Compile Include="PositionTrackingOnScrollListener.cs" />
+    <Compile Include="AligningRecyclerView.cs" />
+    <Compile Include="AligningRecyclerViewRelationship.cs" />
+    <Compile Include="OnScrollListenerManagerOnItemTouchListener.cs" />
+    <Compile Include="CustomScrollListener.cs" />
+    <Compile Include="MyHorizontalScrollView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -104,14 +112,10 @@
     <AndroidResource Include="Resources\layout\Main.axml" />
     <AndroidResource Include="Resources\values\Strings.xml" />
     <AndroidResource Include="Resources\drawable\sample_0.jpg" />
-    <AndroidResource Include="Resources\drawable\sample_1.jpg" />
-    <AndroidResource Include="Resources\drawable\sample_2.jpg" />
-    <AndroidResource Include="Resources\drawable\sample_3.jpg" />
-    <AndroidResource Include="Resources\drawable\sample_4.jpg" />
-    <AndroidResource Include="Resources\drawable\sample_5.jpg" />
-    <AndroidResource Include="Resources\drawable\sample_6.jpg" />
-    <AndroidResource Include="Resources\drawable\sample_7.jpg" />
     <AndroidResource Include="Resources\values\Style.xml" />
+    <AndroidResource Include="Resources\layout\item_adapter.axml" />
+    <AndroidResource Include="Resources\layout\item_adapter_left_down.axml" />
+    <AndroidResource Include="Resources\layout\item_right_top.axml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\mipmap-hdpi\" />

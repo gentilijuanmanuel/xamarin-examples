@@ -1,240 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <RelativeLayout
+    android:layout_height="match_parent"
+    android:splitMotionEvents="false">
+    <FrameLayout
+        android:id="@+id/tl_left_top"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="#ff0000">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:text="Hola!"
+            android:padding="3dip" />
+    </FrameLayout>
+    <exampleCustomTable.AligningRecyclerView
+        android:id="@+id/rv_left_down"
+        android:layout_below="@id/tl_left_top"
+        android:layout_alignParentLeft="true"
+        android:layout_width="70dp"
+        android:layout_height="match_parent"
+        android:background="#00ba0f"
+        android:scrollbars="vertical" />
+    <exampleCustomTable.MyHorizontalScrollView
+        android:id="@+id/hv_right_top"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@id/tl_left_top"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <FrameLayout
-            android:id="@+id/tl_left_top"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentLeft="true"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:background="#ff0000">
+        android:layout_height="70dp"
+        android:background="#444eff">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:id="@+id/txt_1_1"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:layout_margin="5dp"
                 android:text="Hola!"
                 android:padding="3dip" />
-        </FrameLayout>
-        <ScrollView
-            android:id="@+id/sv_left_down"
-            android:layout_below="@id/tl_left_top"
-            android:layout_alignParentLeft="true"
-            android:layout_width="70dp"
-            android:layout_height="match_parent"
-            android:background="#00ba0f">
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <TextView
-                    android:id="@+id/txt_1"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:layout_margin="5dp"
-                    android:text="Hola!"
-                    android:padding="3dip" />
-                <TextView
-                    android:id="@+id/txt_2"
-                    android:layout_below="@id/txt_1"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:layout_margin="5dp"
-                    android:text="Hola!"
-                    android:padding="3dip" />
-                <TextView
-                    android:id="@+id/txt_3"
-                    android:layout_below="@id/txt_2"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:layout_margin="5dp"
-                    android:text="Hola!"
-                    android:padding="3dip" />
-                <TextView
-                    android:id="@+id/txt_4"
-                    android:layout_below="@id/txt_3"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:layout_margin="5dp"
-                    android:text="Hola!"
-                    android:padding="3dip" />
-                <TextView
-                    android:id="@+id/txt_5"
-                    android:layout_below="@id/txt_4"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:layout_margin="5dp"
-                    android:text="Hola!"
-                    android:padding="3dip" />
-                <TextView
-                    android:id="@+id/txt_6"
-                    android:layout_below="@id/txt_5"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:text="Hola!"
-                    android:padding="3dip" />
-                <TextView
-                    android:id="@+id/txt_7"
-                    android:layout_below="@id/txt_6"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:layout_margin="5dp"
-                    android:text="Hola!"
-                    android:padding="3dip" />
-                <TextView
-                    android:id="@+id/txt_8"
-                    android:layout_below="@id/txt_7"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:layout_margin="5dp"
-                    android:text="Hola!"
-                    android:padding="3dip" />
-                <TextView
-                    android:id="@+id/txt_9"
-                    android:layout_below="@id/txt_8"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:layout_margin="5dp"
-                    android:text="Hola!"
-                    android:padding="3dip" />
-                <TextView
-                    android:id="@+id/txt_10"
-                    android:layout_below="@id/txt_9"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:layout_margin="5dp"
-                    android:text="Hola!"
-                    android:padding="3dip" />
-            </RelativeLayout>
-        </ScrollView>
-        <HorizontalScrollView
-            android:id="@+id/hs_right_top"
-            android:layout_alignParentTop="true"
-            android:layout_toRightOf="@id/tl_left_top"
+            <TextView
+                android:id="@+id/txt_1_2"
+                android:layout_toRightOf="@id/txt_1_1"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_margin="5dp"
+                android:text="Hola!"
+                android:padding="3dip" />
+            <TextView
+                android:id="@+id/txt_1_3"
+                android:layout_toRightOf="@id/txt_1_2"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_margin="5dp"
+                android:text="Hola!"
+                android:padding="3dip" />
+            <TextView
+                android:id="@+id/txt_1_4"
+                android:layout_toRightOf="@id/txt_1_3"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_margin="5dp"
+                android:text="Hola!"
+                android:padding="3dip" />
+            <TextView
+                android:id="@+id/txt_1_5"
+                android:layout_toRightOf="@id/txt_1_4"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_margin="5dp"
+                android:text="Hola!"
+                android:padding="3dip" />
+            <TextView
+                android:id="@+id/txt_1_6"
+                android:layout_toRightOf="@id/txt_1_5"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_margin="5dp"
+                android:text="Hola!"
+                android:padding="3dip" />
+        </RelativeLayout>
+    </exampleCustomTable.MyHorizontalScrollView>
+    <exampleCustomTable.MyHorizontalScrollView
+        android:id="@+id/hv_right_down"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@id/rv_left_down"
+        android:layout_below="@id/hv_right_top"
+        android:scrollbars="none">
+        <exampleCustomTable.AligningRecyclerView
+            android:id="@+id/rv_right_down"
             android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:background="#444eff">
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <TextView
-                    android:id="@+id/txt_1_1"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:layout_margin="5dp"
-                    android:text="Hola!"
-                    android:padding="3dip" />
-                <TextView
-                    android:id="@+id/txt_1_2"
-                    android:layout_toRightOf="@id/txt_1_1"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:layout_margin="5dp"
-                    android:text="Hola!"
-                    android:padding="3dip" />
-                <TextView
-                    android:id="@+id/txt_1_3"
-                    android:layout_toRightOf="@id/txt_1_2"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:layout_margin="5dp"
-                    android:text="Hola!"
-                    android:padding="3dip" />
-                <TextView
-                    android:id="@+id/txt_1_4"
-                    android:layout_toRightOf="@id/txt_1_3"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:layout_margin="5dp"
-                    android:text="Hola!"
-                    android:padding="3dip" />
-                <TextView
-                    android:id="@+id/txt_1_5"
-                    android:layout_toRightOf="@id/txt_1_4"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:layout_margin="5dp"
-                    android:text="Hola!"
-                    android:padding="3dip" />
-                <TextView
-                    android:id="@+id/txt_1_6"
-                    android:layout_toRightOf="@id/txt_1_5"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:layout_margin="5dp"
-                    android:text="Hola!"
-                    android:padding="3dip" />
-                <TextView
-                    android:id="@+id/txt_1_7"
-                    android:layout_toRightOf="@id/txt_1_6"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:layout_margin="5dp"
-                    android:text="Hola!"
-                    android:padding="3dip" />
-                <TextView
-                    android:id="@+id/txt_1_8"
-                    android:layout_toRightOf="@id/txt_1_7"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:layout_margin="5dp"
-                    android:text="Hola!"
-                    android:padding="3dip" />
-                <TextView
-                    android:id="@+id/txt_1_9"
-                    android:layout_toRightOf="@id/txt_1_8"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:layout_margin="5dp"
-                    android:text="Hola!"
-                    android:padding="3dip" />
-                <TextView
-                    android:id="@+id/txt_1_10"
-                    android:layout_toRightOf="@id/txt_1_9"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:layout_margin="5dp"
-                    android:text="Hola!"
-                    android:padding="3dip" />
-            </RelativeLayout>
-        </HorizontalScrollView>
-        <HorizontalScrollView
-            android:id="@+id/hv_right_down"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_toRightOf="@id/sv_left_down"
-            android:layout_below="@id/hs_right_top">
-        <!--<android.support.v4.widget.NestedScrollView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">-->
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_toRightOf="@id/sv_left_down"
-                android:layout_below="@id/hs_right_top">
-                <LinearLayout
-                    android:layout_width="700dp"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
-                    <GridView
-                        android:id="@+id/gv_example"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:columnWidth="70dp"
-                        android:numColumns="20"
-                        android:verticalSpacing="5dp"
-                        android:horizontalSpacing="0dp"
-                        android:scrollbarAlwaysDrawHorizontalTrack="true"
-                        android:scrollbarAlwaysDrawVerticalTrack="true"
-                        android:scrollbars="horizontal"
-                        android:stretchMode="none"
-                        android:gravity="center" />
-                </LinearLayout>
-            </FrameLayout>
-        <!--</android.support.v4.widget.NestedScrollView>-->
-        </HorizontalScrollView>
-    </RelativeLayout>
-</android.support.design.widget.CoordinatorLayout>
+            android:layout_height="match_parent"/>
+    </exampleCustomTable.MyHorizontalScrollView>
+</RelativeLayout>

@@ -4,18 +4,18 @@ using Android.Views;
 
 namespace ExampleCustomTable
 {
-    public class RvRightTopAdapter : RecyclerView.Adapter
+    public class RvLeftDownAdapter : RecyclerView.Adapter
     {
         private MainActivity mainActivity;
 
-        public RvRightTopAdapter(MainActivity mainActivity)
+        public RvLeftDownAdapter(MainActivity mainActivity)
         {
             this.mainActivity = mainActivity;
         }
 
         public override int ItemCount
         {
-            get { return 10; }
+            get { return 8; }
         }
 
         public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position)

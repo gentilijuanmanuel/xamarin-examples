@@ -15,7 +15,7 @@ namespace ExampleCustomTable
 
         public override int ItemCount
         {
-            get { return 100; }
+            get { return 48; }
         }
 
         public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position)

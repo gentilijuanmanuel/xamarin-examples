@@ -14,7 +14,7 @@ namespace ExampleCustomTable
             context = c;
 
             for (int i = 0; i < 200; i++)
-                this.thumbIds.Add(Resource.Drawable.sample_2);
+                this.thumbIds.Add(Resource.Drawable.sample_0);
         }
 
         public override int Count
